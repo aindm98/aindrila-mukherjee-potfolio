@@ -7,7 +7,7 @@ import {
   SiMacos,
 } from "react-icons/si";
 
-function Toolstack() {
+const Toolstack = () => {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">

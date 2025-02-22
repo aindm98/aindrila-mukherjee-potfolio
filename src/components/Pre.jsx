@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 
-function Pre(props) {
+const Pre = (props) => {
   return <div id={props.load ? "preloader" : "preloader-none"}></div>;
 }
 

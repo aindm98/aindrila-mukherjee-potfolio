@@ -17,7 +17,7 @@ import "./styles/style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+const App = () => {
   
   const [load, upadateLoad] = useState(true);
 

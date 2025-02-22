@@ -2,7 +2,7 @@
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
 
-function AboutCard() {
+const AboutCard = () => {
   return (
     <Card className="quote-card-view">
       <Card.Body>

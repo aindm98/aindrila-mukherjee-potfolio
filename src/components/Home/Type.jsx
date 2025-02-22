@@ -1,6 +1,6 @@
 import Typewriter from "typewriter-effect";
 
-function Type() {
+const Type = () => {
   return (
     <Typewriter
       options={{
