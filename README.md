@@ -1,0 +1,1 @@
+Hey there! I’m Aindrila Mukherjee, and I’m thrilled to welcome you to my personal website! I built this site using React.js to share my work, skills, and projects with you in a fun and interactive way. With a clean and responsive design, I’ve made sure it looks great and works smoothly on any device. Take your time to explore and enjoy what I’ve created—there’s plenty to see!
