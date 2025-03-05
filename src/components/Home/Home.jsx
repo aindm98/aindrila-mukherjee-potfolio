@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../assets/home-main.svg";
 import Particle from "../Particle";
-import Home2 from "./Home2";
+// import Home2 from "./Home2";
 import Type from "./Type";
 
 const Home = () => {
@@ -40,7 +40,7 @@ const Home = () => {
           </Row>
         </Container>
       </Container>
-      <Home2 />
+      {/* <Home2 /> */}
     </section>
   );
 }
