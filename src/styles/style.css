@@ -813,9 +813,7 @@ input:valid + label, input:focus + label {
     content: "*";
 } */
 
-.contact-form{
-  /* background-color: red; */
-}
+
 
 .contact-form .input-group {
   margin: 20px 0;
@@ -856,19 +854,22 @@ input:valid + label, input:focus + label {
   outline: none;
   border-radius: 5px;
   resize: none;
+  padding: 15px;
 }
 
-.contact-form .input-group .message_label{
+.contact-form .input-group .message_label {
   position: absolute;
-  /* transform: translateY(-50%); */
-  top: 20%;
+  transform: translateY(-50%);
+  top: 19%;
   left: 15px;
   font-size: 16px;
   pointer-events: none;
   color: var(--imp-text-color);
   padding: 0 5px;
-  transition: .5s;
+  transition: all 0.5s ease-in-out;
 }
+
+
 
 .contact-form .input-group input:focus~label,
 .contact-form .input-group input:valid~label{
@@ -877,12 +878,23 @@ input:valid + label, input:focus + label {
   font-size: 14px;
 }
 
-.contact-form .input-group textarea:focus + .message_label,
-.contact-form .input-group textarea:not(:placeholder-shown) + .message_label {
-  top: 8px;
+
+.contact-form .input-group textarea:focus~label,
+.contact-form .input-group textarea:valid~label {
+  top: 0;
+  background:var(--section-background-color);
   font-size: 14px;
-  background: var(--section-background-color);
-  padding: 0 5px;
+}
+
+.submit_btn{
+  background: var(--imp-text-color);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer !important;
+
 }
 
 

@@ -48,6 +48,7 @@ const Contact = () => {
               <textarea type="text" required rows="6"></textarea>
               <label htmlFor="message" className="message_label" >Message</label>
               </div>
+              <button type="submit" className="mb-4 submit_btn">Submit </button>
             </form>
           </Col>
         </Row>
