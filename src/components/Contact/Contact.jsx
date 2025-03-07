@@ -2,9 +2,15 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 
 const Contact = () => {
-  return (
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent page reload
+    console.log("Form submitted!"); // Replace this with actual form submission logic
+  };
+  
+  return (<> 
     <Container fluid className="about-section">
-      <Particle />
+    <Particle />
       <Container>
         <Row style={{ justifyContent: "start", padding: "10px" }}>
           <Col
@@ -24,18 +30,8 @@ const Contact = () => {
           <Col sm={12} md={12} lg={6}>
           </Col>
           <Col sm={12} md={12} lg={6}>
-            {/* <form className="contact-form">
-          <div className="form-group ">
-                <input id="form_name1" className="form-control" type="text"   required />
-                <label htmlFor="form_name1">Name<span className="gl-form-asterisk"></span></label>
-              </div>
-              
-              <div className="form-group mt-5">
-                <input id="form_name2" className="form-control" type="text"  placeholder="" required />
-                <label htmlFor="form_name2">Email<span className="gl-form-asterisk"></span></label>
-              </div>  
-          </form> */}
-            <form className="contact-form">
+            
+            <form className="contact-form" onSubmit={handleSubmit} >
               <div className="input-group">
                 <input type="text" required />
                 <label htmlFor="name">Name</label>
@@ -48,13 +44,15 @@ const Contact = () => {
               <textarea type="text" required rows="6"></textarea>
               <label htmlFor="message" className="message_label" >Message</label>
               </div>
-              <button type="submit" className="mb-4 submit_btn">Submit </button>
+              <button  type="submit" className="mb-4 submit_btn">
+  Submit
+</button>
             </form>
           </Col>
         </Row>
       </Container>
     </Container>
-  );
+  </>);
 };
 
 export default Contact;

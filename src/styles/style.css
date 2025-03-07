@@ -248,6 +248,7 @@ button:focus {
   background-size: cover !important;
   width: 100%;
   height: 100%;
+  pointer-events: none !important;
 }
 
 .home-header {
@@ -813,7 +814,9 @@ input:valid + label, input:focus + label {
     content: "*";
 } */
 
-
+.contact-form{
+  z-index: 1;
+}
 
 .contact-form .input-group {
   margin: 20px 0;
