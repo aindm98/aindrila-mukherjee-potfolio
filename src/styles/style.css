@@ -257,7 +257,7 @@ button:focus {
 
 .home-section {
   position: relative;
-  z-index: -1;
+  /* z-index: -1; */
   background-image: var(--image-gradient), url(./assets/home-bg.jpg);
   background-position: top center;
   background-repeat: no-repeat;
@@ -398,6 +398,19 @@ button:focus {
 .icon-colour {
   color: #700c86 !important;
 }
+
+.link_main{
+  background:transparent;
+  color: #fff;
+  border: 2px solid var(--imp-text-color);
+  padding: 1.25rem 2rem;
+  border-radius: 1rem;
+  font-size: 16px;
+  cursor: pointer !important;
+  text-decoration: none;
+}
+
+
 
 /* --------- */
 /* Footer */
@@ -897,7 +910,6 @@ input:valid + label, input:focus + label {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer !important;
-
 }
 
 
