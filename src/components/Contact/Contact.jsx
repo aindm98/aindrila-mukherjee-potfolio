@@ -1,58 +1,132 @@
+import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
+import { useForm } from 'react-hook-form';
+import illustration from "../../assets/animation/animation";
+import email from "../../assets/lottie/email.json";
+import DisplayLottie from "../displayLottie/DisplayLottie";
 
 const Contact = () => {
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent page reload
-    console.log("Form submitted!"); // Replace this with actual form submission logic
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  const onSubmit = (values) => {
+    console.log(values);
   };
+
+  useEffect(() => {
+    console.log(errors);  
+  }, [errors]);
   
-  return (<> 
-    <Container fluid className="about-section">
-    <Particle />
-      <Container>
-        <Row style={{ justifyContent: "start", padding: "10px" }}>
-          <Col
-            md={7}
-            style={{
-              justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "50px",
-            }}
-          >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Get In <strong className="purple"> Touch.</strong>
-            </h1>
-            <p className="mb-0" >Thanks for taking the time to reach out.</p>
-            <p className="mb-0">Have a question or want to work together?</p>
-          </Col>
-          <Col sm={12} md={12} lg={6}>
-          </Col>
-          <Col sm={12} md={12} lg={6}>
-            
-            <form className="contact-form" onSubmit={handleSubmit} >
-              <div className="input-group">
-                <input type="text" required />
-                <label htmlFor="name">Name</label>
+  
+  return (
+    <>
+      <Container fluid className="about-section">
+        <Particle />
+        <Container>
+          <Row style={{ justifyContent: "start", padding: "10px" }}>
+            <Col
+              md={7}
+              style={{
+                justifyContent: "center",
+                paddingTop: "30px",
+                paddingBottom: "50px",
+              }}
+            >
+              <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+                Get In <strong className="purple"> Touch.</strong>
+              </h1>
+              <p className="mb-0">Thanks for taking the time to reach out.</p>
+              <p className="mb-0">Have a question or want to work together?</p>
+            </Col>
+            <Col sm={12} md={12} lg={6}>
+              <div className="contact-image"> 
+              {illustration.animated ? (
+                <DisplayLottie animationData={email} />
+              ) : (
+                <img
+                  alt="Man working"
+                  src={"../../assets/images/contactMailDark.svg"}
+                ></img>
+              )}
               </div>
-              <div className="input-group">
-                <input type="email" required />
-                <label htmlFor="email">Email</label>
-              </div>
-              <div className="input-group">
-              <textarea type="text" required rows="6"></textarea>
-              <label htmlFor="message" className="message_label" >Message</label>
-              </div>
-              <button  type="submit" className="mb-4 submit_btn">
-  Submit
-</button>
-            </form>
-          </Col>
-        </Row>
+            </Col>
+            <Col sm={12} md={12} lg={6}>
+              <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+                <div className="input-group">
+                  <div className="floating_input">
+                    <input
+                      type="text"
+                      id="name"
+                      autoComplete="off"
+                      {...register("name", {
+                        required: "Name is required",
+                        maxLength: 80,
+                      })}
+                    />
+                    <label htmlFor="name">Name</label>
+                  </div>
+                  {errors.name && (
+                    <p className="text-danger">{errors.name.message}</p>
+                  )}
+                </div>
+
+                <div className="input-group">
+                  <div className="floating_input">
+                    <input
+                      type="email"
+                      id="email"
+                      autoComplete="off"
+                      {...register("email", {
+                        required: "Email is required",
+                        pattern: {
+                          value:
+                            /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                          message: " Sorry, invalid email address format",
+                        },
+                      })}
+                    />
+                    <label htmlFor="email">Email</label>
+                  </div>
+
+                  {errors.email && (
+                    <p className="text-danger">{errors.email.message}</p>
+                  )}
+                </div>
+                <div className="input-group ">
+                  <div className="floating_input">
+                    <textarea
+                      type="text"
+                      autoComplete="off"
+                      rows="6"
+                      id="message"
+                      {...register("message", {
+                        required: "Message is required ",
+                        maxLength: 180,
+                      })}
+                    ></textarea>
+                    <label htmlFor="message" className="message_label">
+                      Message
+                    </label>
+                    {errors.message && (
+                      <p className="text-danger">{errors.message.message}</p>
+                    )}
+                  </div>
+                </div>
+                <button type="submit" className="mb-4 submit_btn">
+                  Submit
+                </button>
+              </form>
+            </Col>
+          </Row>
+        </Container>
       </Container>
-    </Container>
-  </>);
+    </>
+  );
 };
 
 export default Contact;
