@@ -1,6 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../assets/about.png";
@@ -34,17 +33,17 @@ const About = () => {
           </Col>
         </Row>
         <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
+        Technical <strong className="purple">Proficiencies</strong>
         </h1>
 
         <Techstack />
 
         <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
+          <strong className="purple">Tools</strong>
         </h1>
         <Toolstack />
 
-        <Github />
+        {/* <Github /> */}
       </Container>
     </Container>
   );

@@ -5,18 +5,16 @@ import {
   DiReact,
   DiNodejs,
   DiMongodb,
-  DiPython,
-  DiGit,
-  DiJava,
 } from "react-icons/di";
 import {
-  SiRedis,
   SiFirebase,
   SiNextdotjs,
-  SiSolidity,
-  SiPostgresql,
+  SiExpress ,
+  SiRedux,
+  SiAngular,
+  SiBootstrap,
 } from "react-icons/si";
-import { TbBrandGolang } from "react-icons/tb";
+
 
 const Techstack = () => {
   return (
@@ -28,7 +26,7 @@ const Techstack = () => {
         <DiJavascript1 />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <TbBrandGolang />
+        <SiAngular />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiNodejs />
@@ -37,7 +35,13 @@ const Techstack = () => {
         <DiReact />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSolidity />
+        <SiRedux />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiBootstrap />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiExpress />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiMongodb />
@@ -46,23 +50,9 @@ const Techstack = () => {
         <SiNextdotjs />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
         <SiFirebase />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiRedis />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostgresql />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJava />
-      </Col>
+      
     </Row>
   );
 }
