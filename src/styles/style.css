@@ -782,6 +782,50 @@ button:focus {
   margin-left: 49px;
 }
 
+.contact_info{
+    display: grid;
+    row-gap: 1rem;
+    grid-template-columns: 300px;
+    z-index: 1;
+}
+
+.contact_card{
+    background-color: var(--container-color);
+    border: 1px solid var(--imp-text-color) !important;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.contact_card-icon{
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.contact_card-title,
+.contact__card-data{
+    font-size: 0.813rem;
+}
+
+.contact_card-title{
+    font-weight:500;
+}
+
+.contact_link{
+    align-items: center;
+    color:var(--imp-text-color);
+    -webkit-column-gap: .25rem;
+    column-gap: .25rem;
+    display: inline-flex;
+    text-decoration: none;
+    font-size: 0.813rem;;
+    justify-content: center;
+}
+
+.contact_card-data{
+    display: block;
+    margin-bottom: 0.75rem;
+}
 
 .contact-form{
   z-index: 1;
@@ -836,7 +880,7 @@ button:focus {
 .contact-form .floating_input .message_label {
   position: absolute;
   transform: translateY(-50%);
-  top: 50%;
+  top: 15%;
   left: 15px;
   font-size: 16px;
   pointer-events: none;
@@ -845,22 +889,15 @@ button:focus {
   transition: .5s;
 }
 
-.contact-form .floating_input input[data-has-value="true"] ~ label,
+.contact-form .floating_input input:not(:placeholder-shown) ~ label,
 .contact-form .floating_input input:focus ~ label {
   top: 0;
   background: var(--section-background-color);
   font-size: 14px;
 }
 
-/* .contact-form .floating_input input:focus~label,
-.contact-form .floating_input input:valid~label{
-  top: 0;
-  background:var(--section-background-color);
-  font-size: 14px;
-} */
 
-
-.contact-form .floating_input textarea[data-has-value="true"]  ~ label,
+.contact-form .floating_input textarea:not(:placeholder-shown)  ~ label,
 .contact-form .floating_input textarea:focus ~ label {
   top: 0;
   background: var(--section-background-color);
@@ -877,6 +914,23 @@ button:focus {
   cursor: pointer !important;
 }
 
+
+
+  @media screen and (max-width: 768px) {
+  
+    .contact_info{
+        justify-content: center;
+    }
+    
+  }
+  
+  @media screen and (max-width: 576px) {
+    .contact_info{
+        grid-template-columns: 1fr;
+    }
+   
+  }
+  
 
 
 
